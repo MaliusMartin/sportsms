@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block page_header %}<h1>All Sports</h1>{% endblock page_header %}
+
+{% block content %}
+
+<div class="row">
+  {% for sport in sports %}
+    <div class="col-md-4">
+      <div class="card mb-4">
+        {% if sport.image %}
+          <img src="{{ sport.image.url }}" alt="Sports Image">
+        {% else %}
+          <img src="/static/images/placeholder.jpg" alt="Placeholder Image">
+        {% endif %}
+        <div class="card-body d-flex flex-column">
+          <h4 class="card-title">Interested in {{ sport }}</h4>
+          <p class="card-text flex-grow-1">{{ sport.subsports }}</p>
+          <a href="{% url 'core:sport' sport.id %}" class="btn btn-primary mt-auto">{{ sport }}</a>
+        </div>
+      </div>
+    </div>
+    {% cycle "" "" "</div><div class='row'>" %}
+  {% empty %}
+    <div class="col">
+      <h3>No sports have been added yet.</h3>
+    </div>
+  {% endfor %}
+</div>
+
+<a  class="btn btn-primary mt-auto">Add a new sport</a>
+
+{% endblock content %}

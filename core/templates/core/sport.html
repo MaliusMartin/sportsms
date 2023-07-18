@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block page_header %}
+  <p>Sport: {{ sport }}</p>
+{% endblock page_header %}
+
+{% block content %}
+  <p>Top Stories:</p>
+  <p>
+    {% comment %} <!-- <a href="{% url 'bp_logs:new_detail' sport.id %}"><span class="badge badge-secondary">Add new post</span></a> --> {% endcomment %}
+  </p>
+  <ul>
+    {% for detail in details %}
+    <div class="card mb-3">
+      <h4>
+        {{ detail.headline }}
+        <p>{{ detail.Post }}</p>
+        <h6>{{ detail.date_added|date:'M d, Y H:i' }}</h6>
+        <h6>{{ detail.Author }}</h6>
+        {% if detail.image %}
+          <img src="{{ detail.image.url }}" alt="Detail Image">
+        {% else %}
+          <img src="/static/images/placeholder.jpg" alt="Placeholder Image">
+        {% endif %}
+      </h4>
+      <div class="card-body">
+        {{ detail.text|linebreaks }}
+        {% if detail.image %}
+          <img src="{{ detail.image1.url }}" alt="Detail Image">
+        {% else %}
+          <img src="/static/images/placeholder.jpg" alt="Placeholder Image">
+        {% endif %}
+      </div>
+      <small>
+        {% comment %} <!-- <a href="{% url 'bp_logs:edit_detail' detail.id %}"><span class="badge badge-secondary">Edit Details</span></a> --> {% endcomment %}
+      </small>
+    </div>
+    {% empty %}
+    <li>There are no details for this sport yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

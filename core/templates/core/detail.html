@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+
+
+
+{% block content %}
+<div class="container">
+  <div class="card">
+    <h4>{{ detail.headline }}</h4>
+    <p>{{ detail.Post }}</p>
+    <h6>{{ detail.date_added|date:'M d, Y H:i' }}</h6>
+    <h6>{{ detail.Author }}</h6>
+    {% if detail.image %}
+      <img src="{{ detail.image.url }}" alt="Detail Image">
+    {% else %}
+      <img src="/static/images/placeholder.jpg" alt="Placeholder Image">
+    {% endif %}
+    <div class="card-body">
+      {{ detail.text|linebreaks }}
+      {% if detail.image1 %}
+        <img src="{{ detail.image1.url }}" alt="Detail Image">
+      {% else %}
+        <img src="/static/images/placeholder.jpg" alt="Placeholder Image">
+      {% endif %}
+    </div>
+  </div>
+<div/>
+{% endblock %}

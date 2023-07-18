@@ -1,0 +1,31 @@
+
+
+
+    .social-icons {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .social-icons li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      
+      .social-icons li a i {
+        color: white;
+      }
+      .custom-footer {
+        background-color: rgba(0, 0, 32, 0.8);
+        color: #fff; /* Text color */
+      }
+      .custom-nav {
+        background-color: rgba(0, 0, 32, 0.8);
+        color: #fff; /* Text color */
+      }
+      
+      .btn{
+        background-color: rgba(0, 0, 32, 0.8);
+        color: #fff; /* Text color */
+      }  
+

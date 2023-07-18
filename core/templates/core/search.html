@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <h2>Search Results for "{{ query }}"</h2>
+  <ul>
+    {% for detail in results %}
+      <li>{{ detail.headline }}</li>
+      {% comment %} <!-- Display other relevant information --!> {% endcomment %}
+    {% empty %}
+      <li>No results found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
