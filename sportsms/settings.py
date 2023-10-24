@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     #3rd part
     'bootstrap5',
     'multiselectfield',
+    'bootstrap4',
     
     #default app
     'django.contrib.admin',
