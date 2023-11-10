@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     #my application
     'core',
     #3rd part
-    'bootstrap5',
+    # 'bootstrap5',
     'bootstrap4',
     'django_browser_reload',
     'multiselectfield',
