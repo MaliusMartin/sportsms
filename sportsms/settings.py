@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-sn31po#jjslx+o+s%b(^)&u#p_uxf(wx#jx)xv2^jw$$=u%g-n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','tottmsbackend.azurewebsites.net', '127.0.0.1']
+# ALLOWED_HOSTS = ['.vercel.app','tottmsbackend.azurewebsites.net', '127.0.0.1', '']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'bootstrap5',
     'multiselectfield',
     'bootstrap4',
+    'django_browser_reload',
     
     #default app
     'django.contrib.admin',
@@ -56,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'sportsms.urls'
@@ -136,4 +139,10 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
+STATIC_URL = 'static/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
