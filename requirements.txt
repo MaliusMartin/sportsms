@@ -2,6 +2,7 @@ asgiref==3.6.0
 beautifulsoup4==4.12.2
 Django==4.2.1
 django-bootstrap-v5==1.0.11
+# django-bootstrap4==23.1
 bootstrap4==0.1.0
 django-browser-reload==1.12.0
 pip==23.3.1
