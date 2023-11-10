@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'multiselectfield',
     'bootstrap4',
     'django_browser_reload',
+    'multiselectfield',
     
     #default app
     'django.contrib.admin',
