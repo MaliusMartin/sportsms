@@ -20,7 +20,8 @@
       {% if detail.image1 %}
         <img src="{{ detail.image1.url }}" alt="Detail Image">
       {% else %}
-        <img src="/static/images/placeholder.jpg" alt="Placeholder Image">
+        <img src="{{ detail.image.url }}" alt="Detail Image">
+        {% comment %} <img src="/static/images/placeholder.jpg" alt="Placeholder Image"> {% endcomment %}
       {% endif %}
     </div>
   </div>
