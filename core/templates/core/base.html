@@ -1,6 +1,7 @@
 
 {% load bootstrap4 %}
 {% load static %}
+{% load django_browser_reload %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -184,5 +185,6 @@
      
         
         <script src="{% static 'bootstrap-5.3.0-dist/js/bootstrap.bundle.min.js' %}"></script>  
-    </body>
+        {% django_browser_reload_script %}
+      </body>
 </html>
