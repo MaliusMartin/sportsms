@@ -18,9 +18,13 @@
     <div class="card-body">
       {{ detail.text|linebreaks }}
       {% if detail.image1 %}
-        <img src="{{ detail.image1.url }}" alt="Detail Image">
+        <img src="{{ detail.image2.url }}" alt="Detail Image">
       {% else %}
-        <img src="{{ detail.image.url }}" alt="Detail Image">
+        <img src="{{ detail.image2.url }}" alt="Detail Image">
+        {% if detail.image1 %}
+        <img src="{{ detail.image2.url }}" alt="Detail Image">
+      {% else %}
+        <img src="{{ detail.image2.url }}" alt="Detail Image">
         {% comment %} <img src="/static/images/placeholder.jpg" alt="Placeholder Image"> {% endcomment %}
       {% endif %}
     </div>
